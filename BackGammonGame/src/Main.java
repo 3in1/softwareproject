@@ -1,3 +1,13 @@
+/*
+ ============================================================================
+ Name        : Main.java
+ Author      : 3in1 Team
+ Version     :
+ Copyright   : 3in1 Team
+ Description : 
+ ============================================================================
+ */
+
 import java.util.Scanner;
 
 public class Main {
@@ -15,12 +25,12 @@ public class Main {
 		
 		System.out.println("\n\t **Welcome to Backgammon Game!**\n");
 		game.Initialization();
-		//This part of code is for testing for assignment 1........
+		
 		do{
 			game.settinguptheboard(positionfirstselection,positionsecondselection);
 			dice1.roll();
 			dice2.roll();
-			System.out.println("\t    Dice One: " + dice1.value()+  "; Dice Two: "+dice2.value() +"\n");	
+			System.out.println("\t    Dice One: " + dice1.value()+  " ; Dice Two: "+dice2.value() +"\n");	
 			System.out.println("Please enter a position you wanna move: ");
 				positionfirstselection=a.nextInt();
 				System.out.println("Move to where (Integer position number)?: ");
@@ -36,13 +46,10 @@ public class Main {
 				}
 			
 		}while(n<100);
-		
 	}
 		
 	private static void exit(int i) {
 		// TODO Auto-generated method stub
 		
-	}
-	  
-	
+	}  
 }

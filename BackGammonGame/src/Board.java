@@ -1,5 +1,14 @@
+/*
+ ============================================================================
+ Name        : Board.java
+ Author      : 3in1 Team
+ Version     :
+ Copyright   : 3in1 Team
+ Description : 
+ ============================================================================
+ */
+ 
 import java.util.Random;
-
 
 public class Board {
 	public static String[][] ChipsSetUpNumbers = new String[25][25];
@@ -15,9 +24,6 @@ public class Board {
 		ChipsSetUpNumbers[19][0]="O"; ChipsSetUpNumbers[19][1]="5";
 		ChipsSetUpNumbers[24][0]="X"; ChipsSetUpNumbers[24][1]="2";
 	}
-	
-
-	
 	
 	public void settinguptheboard(int start, int end){
 		int validmovechecking=0;
@@ -128,8 +134,7 @@ public class Board {
 				    for (int PrintEmptySpace=0;PrintEmptySpace<2;PrintEmptySpace++){
 						System.out.print(" ");
 					}
-				}
-						
+				}		
 				System.out.println();
 				
 		//The board: Bottom frame
@@ -158,65 +163,52 @@ public class Board {
 				}
 				//Invalid moves checking
 				if (validmovechecking>=1){
-					System.out.print("\nInvalid Move: " +
-							"1. Cannot move X onto O or vice versa!"+
-							" or 2. Cannot move from an empty place.");
+					System.out.print("\n\nInvalid Move: " +
+							"  1. Cannot move X onto O or vice versa!"+
+							" or \n\t\t2. Cannot move from an empty place."+
+							" or \n\t\t3. X can't move Clockwise  or O can't move Anticlockwise!");
 				}
-				System.out.println("\n");
-				
+				System.out.println("\n");		
 	}
 }
+
 class Dice {
 	// The number of spots on the visible face
 		private int value;
-		// The class pseudo random number generator
+		// The class ?s pseudo random number generator
 		private static Random random = new Random ();
 		public Dice () {
 			roll (); // Initial value is random
 		}
+		
 	// Sets value to a number in the range 1 , 2 , 3 , ... , 6
 		public void roll () {
-			value = random.nextInt (6) + 1;
-			
+			value = random.nextInt (6) + 1;	
 		}
+		
 	// Draws the visible face in text -based graphics
 		public int value() {
-				//System.out.println("+-------+");
 				if ( value == 1) {
 					return 1;
-					/*System.out.println("|       |");
-					System.out.println("|   *   |");
-					System.out.println("|       |");*/
-				} else if ( value == 2) {
+				} 
+				else if ( value == 2) {
 					return 2;
-					/*System.out.println("| *     |");
-					System.out.println("|       |");
-					System.out.println("|     * |");*/
-				} else if ( value == 3) {
+				} 
+				else if ( value == 3) {
 					return 3;
-					/*System.out.println("|     * |");
-					System.out.println("|   *   |");
-					System.out.println("| *     |");*/
-				} else if ( value == 4) {
-					return 4;
-					/*System.out.println("| *   * |");
-					System.out.println("|	|");
-					System.out.println("| *   * |");*/
-				} else if ( value == 5) {
+				} 
+				else if ( value == 4) {
+					return 4;					
+				} 
+				else if ( value == 5) {
 					return 5;
-					/*System.out.println("| *   * |");
-					System.out.println("|   *   |");
-					System.out.println("| *   * |");*/
-				} else if ( value == 6) {
+				} 
+				else if ( value == 6) {
 					return 6;
-					/*System.out.println("| * * * |");
-					System.out.println("|       |");
-					System.out.println("| * * * |");*/
-				} else { // Defensive catch all:
+				} 
+				else { // Defensive catch all:
 					System.out.println(" *** Error : illegal die value ***");
 				}
-				//System.out.println("+-------+");
 				return value;
 				}
 		}
-
